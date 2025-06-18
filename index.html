@@ -18,6 +18,7 @@
       align-items: center;
       text-shadow: 0 0 5px black;
     }
+
     button {
       padding: 10px 20px;
       font-size: 1.2rem;
@@ -28,6 +29,7 @@
       color: white;
       transition: background 0.3s;
     }
+
     button:hover {
       background: rgba(0,0,0,0.8);
     }
@@ -39,9 +41,15 @@
 
   <button type="button" onclick="playSound()">Click Me!</button>
 
+  <audio id="kanyeAudio" preload="auto">
+    <source src="https://raw.githubusercontent.com/keystrokedasf/kanye/main/PEAKKK%20(3).mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
     function playSound() {
-      const audio = new Audio("https://cdn.discordapp.com/attachments/1191749198748586110/1382476438443131002/PEAKKK_2.mp3?ex=684b4b04&is=6849f984&hm=6479180c923b87bef39dc7035813c772658f5d85b50ca26617d06598fdc48d49&");
+      const audio = document.getElementById("kanyeAudio");
+      audio.currentTime = 0;
       audio.play();
     }
   </script>
